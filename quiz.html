@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz - HackAtom 2025</title>
+    <link rel="stylesheet" href="styleq.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>HackAtom <span>2025</span></h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="simulator.html">Simulator</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <!-- Main Content -->
+    <main
+      class="parallax"
+      style="
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Uranium_ore_sample.jpg');
+      "
+    >
+      <div class="section-content">
+        <h2>Test Your Knowledge</h2>
+        <div class="quiz-grid">
+          <!-- Multiple-Choice Card -->
+          <div class="card quiz-card" data-game="mc">
+            <i
+              class="fa-solid fa-question-circle card-icon"
+              style="color: #f0c14b"
+            ></i>
+            <h3>Multiple-Choice Quiz</h3>
+            <div class="game-content" style="display: none">
+              <div id="mc-progress"></div>
+              <div id="mc-quiz">
+                <div id="mc-question"></div>
+                <div id="mc-options"></div>
+                <button id="mc-submit">Submit</button>
+                <div id="mc-feedback"></div>
+                <div id="mc-score" style="display: none"></div>
+                <button id="mc-retry" style="display: none">Retry</button>
+                <button id="mc-end" style="display: none">End</button>
+              </div>
+            </div>
+          </div>
+          <!-- True/False Card -->
+          <div class="card quiz-card" data-game="tf">
+            <i
+              class="fa-solid fa-check-circle card-icon"
+              style="color: #e55634"
+            ></i>
+            <h3>True/False Game</h3>
+            <div class="game-content" style="display: none">
+              <div id="tf-progress"></div>
+              <div id="tf-quiz">
+                <div id="tf-question"></div>
+                <button id="tf-true">True</button>
+                <button id="tf-false">False</button>
+                <div id="tf-feedback"></div>
+                <div id="tf-score" style="display: none"></div>
+                <button id="tf-retry" style="display: none">Retry</button>
+                <button id="tf-end" style="display: none">End</button>
+              </div>
+            </div>
+          </div>
+          <!-- Matching Card -->
+          <div class="card quiz-card" data-game="match">
+            <i
+              class="fa-solid fa-puzzle-piece card-icon"
+              style="color: #f0c14b"
+            ></i>
+            <h3>Matching Game</h3>
+            <div class="game-content" style="display: none">
+              <div id="match-progress"></div>
+              <div id="match-game">
+                <div id="match-methods"></div>
+                <div id="match-descriptions"></div>
+                <button id="match-submit">Submit</button>
+                <div id="match-feedback"></div>
+                <div id="mc-score" style="display: none"></div>
+                <button id="match-retry" style="display: none">Retry</button>
+                <button id="match-end" style="display: none">End</button>
+              </div>
+            </div>
+          </div>
+          <!-- Statement Quiz Card -->
+          <div class="card quiz-card" data-game="stmt">
+            <i class="fa-solid fa-pen card-icon" style="color: #e55634"></i>
+            <h3>Statement Quiz</h3>
+            <div class="game-content" style="display: none">
+              <div id="stmt-progress"></div>
+              <div id="stmt-quiz">
+                <div id="stmt-question"></div>
+                <input
+                  type="text"
+                  id="stmt-answer"
+                  placeholder="Type your answer"
+                />
+                <button id="stmt-submit">Submit</button>
+                <div id="stmt-feedback"></div>
+                <div id="stmt-score" style="display: none"></div>
+                <button id="stmt-retry" style="display: none">Retry</button>
+                <button id="stmt-end" style="display: none">End</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/quiz.js"></script>
+  </body>
+</html>

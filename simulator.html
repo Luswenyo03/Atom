@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulator - HackAtom 2025</title>
+    <link rel="stylesheet" href="sim.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>HackAtom <span>2025</span></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="simulator.html">Simulator</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main
+      class="parallax"
+      style="
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Uranium_ore_sample.jpg');
+      "
+    >
+      <div class="section-content">
+        <h2>Uranium Mining Simulator</h2>
+        <p class="intro-text">
+          Select a mining method to see how your land transforms from pristine
+          to post-mining, with environmental damage and costs, inspired by
+          Namibia’s uranium industry.
+        </p>
+        <div class="simulator-grid">
+          <!-- In-situ Leaching Card -->
+          <div class="card simulator-card" data-method="isl">
+            <i class="fa-solid fa-cogs card-icon" style="color: #f0c14b"></i>
+            <h3>In-situ Leaching (ISL)</h3>
+          </div>
+          <!-- Open-Pit Card -->
+          <div class="card simulator-card" data-method="open-pit">
+            <i class="fa-solid fa-cogs card-icon" style="color: #e55634"></i>
+            <h3>Open-Pit Mining</h3>
+          </div>
+          <!-- Underground Card -->
+          <div class="card simulator-card" data-method="underground">
+            <i class="fa-solid fa-cogs card-icon" style="color: #f0c14b"></i>
+            <h3>Underground Mining</h3>
+          </div>
+          <!-- Result Card -->
+          <div class="card result-card" style="display: none">
+            <i
+              class="fa-solid fa-info-circle card-icon"
+              style="color: #e55634"
+            ></i>
+            <h3>Simulation Result</h3>
+            <div class="image-container">
+              <div class="image-wrapper">
+                <h4>Before Mining</h4>
+                <img
+                  id="sim-before-image"
+                  src="https://tse4.mm.bing.net/th/id/OIP.CdVNBDlZDMXv3_4A8q7GSgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                  alt="Pristine land"
+                />
+              </div>
+              <div class="image-wrapper">
+                <h4>After Mining</h4>
+                <img id="sim-after-image" src="" alt="Post-mining land" />
+              </div>
+            </div>
+            <div id="sim-result"></div>
+            <button id="sim-reset">
+              <i class="fa-solid fa-recycle"></i> Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/sim.js"></script>
+  </body>
+</html>

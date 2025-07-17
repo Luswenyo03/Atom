@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hack | Atom</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Hack<span>Atom</span>.</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="learn.html">Learn</a>
+        <a href="simulator.html">Simulator</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <section class="home">
+      <div class="CTA">
+        <h1>Dig Into the World of <span>Nuclear Mining</span></h1>
+
+        <div class="rotating-paragraphs">
+          <p>
+            Explore how uranium is mined, the different extraction methods, and
+            which ones are safest, cleanest, and most efficient — all in one
+            interactive platform.
+          </p>
+          <p>
+            Learn, explore, and test your knowledge about clean, safe energy!
+          </p>
+          <p>Understand the science behind uranium extraction techniques.</p>
+          <p>See how nuclear mining supports sustainability and clean power.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card card1">
+          <div class="card-content">
+            <i class="fas fa-atom fa-3x"></i>
+            <h3>Discover Nuclear Science</h3>
+            <p>
+              Dive deep into the fundamentals of nuclear energy and its
+              applications.
+            </p>
+          </div>
+          <a href="/pages/learn.html" class="card-link">Explore Learn Page →</a>
+        </div>
+
+        <div class="card card2">
+          <div class="card-content">
+            <i class="fas fa-flask fa-3x"></i>
+            <h3>Try the Simulator</h3>
+            <p>
+              Interact with a virtual nuclear reactor and understand how it
+              works.
+            </p>
+          </div>
+          <a href="/pages/simulator.html" class="card-link"
+            >Go to Simulator →</a
+          >
+        </div>
+
+        <div class="card card3">
+          <div class="card-content">
+            <i class="fas fa-question-circle fa-3x"></i>
+            <h3>Test Your Knowledge</h3>
+            <p>
+              Take fun quizzes to check your understanding of nuclear mining.
+            </p>
+          </div>
+          <a href="/pages/quiz.html" class="card-link">Start Quiz →</a>
+        </div>
+
+        <div class="card card4">
+          <div class="card-content">
+            <i class="fas fa-shield-alt fa-3x"></i>
+            <h3>Safe Mining Matters</h3>
+            <p>
+              Modern mining methods reduce risks and protects the planet a
+              smarter way to mine.
+            </p>
+          </div>
+          <a href="/pages/learn.html" class="card-link">Learn more →</a>
+        </div>
+      </div>
+
+      <!-- <div class="partner">
+        <div class="marquee">
+          <div class="track">
+            <img src="/src/logo 1.jpg" alt="Logo 1" />
+            <img src="/src/logo 2.jpg" alt="Logo 2" />
+            <img src="/src/logo 3.png" alt="Logo 3" />
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-toggle" onclick="toggleChatbot()">💬</div>
+    <div class="chatbot-container" id="chatbot">
+      <div class="chatbot-header">Ask Me</div>
+      <div class="chatbot-body" id="chat-history"></div>
+      <input
+        type="text"
+        id="chat-input"
+        placeholder="Ask about nuclear mining..."
+        onkeydown="if(event.key==='Enter') sendChat()"
+      />
+    </div>
+
+    <style>
+      .chatbot-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #e55634;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        z-index: 9999;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .chatbot-toggle:hover {
+        background: #f0c14b;
+        transform: scale(1.05);
+      }
+
+      .chatbot-container {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 300px;
+        max-height: 400px;
+        background: rgba(23, 34, 40, 0.4);
+        border: 1px solid #2e464a;
+        border-radius: 10px;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        overflow: hidden;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .chatbot-header {
+        background: #e55634;
+        color: white;
+        padding: 0.8rem;
+        font-weight: bold;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .chatbot-body {
+        padding: 1rem;
+        font-size: 0.9rem;
+        overflow-y: auto;
+        max-height: 250px;
+        color: white;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .chatbot-body p {
+        margin: 0.4rem 0;
+      }
+
+      #chat-input {
+        border: none;
+        border-top: 1px solid #2e464a;
+        padding: 0.7rem;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #chat-input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    </style>
+
+    <script>
+      function toggleChatbot() {
+        const bot = document.getElementById("chatbot");
+        bot.style.display = bot.style.display === "flex" ? "none" : "flex";
+      }
+
+      function toggleChatbot() {
+        const bot = document.getElementById("chatbot");
+        bot.style.display = bot.style.display === "flex" ? "none" : "flex";
+      }
+
+      function sendChat() {
+        const question = document
+          .getElementById("chat-input")
+          .value.toLowerCase()
+          .trim();
+        if (!question) return; // Prevent empty submissions
+        const chatHistory = document.getElementById("chat-history");
+
+        // Append user question to chat history
+        const userMessage = document.createElement("p");
+        userMessage.innerHTML = `<strong style="color: #f0c14b;">You:</strong> ${question}`;
+        chatHistory.appendChild(userMessage);
+
+        let answer = "";
+
+        if (question.includes("what is uranium")) {
+          answer =
+            "Uranium is a naturally radioactive metal used as fuel in nuclear reactors.";
+        } else if (question.includes("what is mining")) {
+          answer =
+            "Mining is the process of extracting minerals or other materials from the Earth.";
+        } else if (
+          question.includes("types of uranium") ||
+          question.includes("uranium deposits")
+        ) {
+          answer =
+            "Main geological types include sandstone-hosted, vein-type, breccia complex, and intrusive deposits.";
+        } else if (
+          question.includes("extraction methods") ||
+          question.includes("how is uranium extracted")
+        ) {
+          answer =
+            "Common methods include open-pit mining, underground mining, and in-situ leaching.";
+        } else if (
+          question.includes("sustainable development") ||
+          question.includes("environmental impact")
+        ) {
+          answer =
+            "Sustainable mining considers environmental protection, social responsibility, and economic benefits.";
+        } else if (question.includes("why is safe mining important")) {
+          answer =
+            "Safe mining reduces environmental damage and protects workers' health and communities.";
+        } else if (
+          question.includes("in-situ leaching") ||
+          question.includes("what is isl")
+        ) {
+          answer =
+            "In-situ leaching (ISL) involves injecting a leaching solution into underground uranium deposits to dissolve and extract uranium, minimizing surface disruption.";
+        } else if (
+          question.includes("open-pit mining") ||
+          question.includes("open pit")
+        ) {
+          answer =
+            "Open-pit mining removes large amounts of earth to access shallow uranium deposits, offering high production but significant environmental impact.";
+        } else if (question.includes("underground mining")) {
+          answer =
+            "Underground mining accesses deep uranium deposits via tunnels and shafts, suitable for high-grade deposits with less surface impact but higher costs.";
+        } else if (
+          question.includes("uses of uranium") ||
+          question.includes("what is uranium used for")
+        ) {
+          answer =
+            "Uranium is primarily used as fuel for nuclear power plants, in medical isotopes, and in some military applications like nuclear weapons.";
+        } else if (
+          question.includes("radiation risks") ||
+          question.includes("is uranium mining dangerous")
+        ) {
+          answer =
+            "Uranium mining poses radiation risks to workers and nearby communities, requiring strict safety measures to minimize exposure.";
+        } else if (
+          question.includes("uranium processing") ||
+          question.includes("how is uranium processed")
+        ) {
+          answer =
+            "Uranium ore is processed into yellowcake (uranium concentrate) through crushing, leaching, and chemical treatment, then converted to fuel for reactors.";
+        } else if (
+          question.includes("waste management") ||
+          question.includes("mining waste")
+        ) {
+          answer =
+            "Uranium mining produces radioactive tailings and waste rock, which must be managed carefully to prevent environmental contamination.";
+        } else if (
+          question.includes("economic benefits") ||
+          question.includes("why mine uranium")
+        ) {
+          answer =
+            "Uranium mining supports energy production, creates jobs, and drives economic growth in regions with deposits.";
+        } else if (
+          question.includes("groundwater") ||
+          question.includes("water impact")
+        ) {
+          answer =
+            "In-situ leaching can risk groundwater contamination, while open-pit mining may affect local water sources due to runoff and waste.";
+        } else if (
+          question.includes("best mining method") ||
+          question.includes("which mining method is best") ||
+          question.includes("best extraction method")
+        ) {
+          answer =
+            "The best mining method depends on the deposit and priorities. In-situ leaching (ISL) is best for minimal surface disruption but risks groundwater. Open-pit mining is efficient for shallow deposits but has high environmental impact. Underground mining suits deep, high-grade deposits but is costly and complex.";
+        } else if (
+          question.includes("advantages of isl") ||
+          question.includes("in-situ leaching benefits")
+        ) {
+          answer =
+            "In-situ leaching (ISL) has low surface disruption, lower costs, and is suitable for sandstone-hosted deposits, but it requires careful groundwater monitoring.";
+        } else if (
+          question.includes("disadvantages of isl") ||
+          question.includes("in-situ leaching risks")
+        ) {
+          answer =
+            "In-situ leaching (ISL) risks groundwater contamination and may not be suitable for all deposit types, requiring extensive site restoration.";
+        } else if (
+          question.includes("advantages of open-pit") ||
+          question.includes("open-pit mining benefits")
+        ) {
+          answer =
+            "Open-pit mining allows high production rates and access to shallow deposits, but it causes significant land disturbance and waste.";
+        } else if (
+          question.includes("disadvantages of open-pit") ||
+          question.includes("open-pit mining risks")
+        ) {
+          answer =
+            "Open-pit mining creates large environmental footprints, produces substantial waste, and can disrupt local ecosystems and water sources.";
+        } else if (
+          question.includes("advantages of underground") ||
+          question.includes("underground mining benefits")
+        ) {
+          answer =
+            "Underground mining minimizes surface disruption and is ideal for high-grade, deep deposits, but it involves higher costs and safety challenges.";
+        } else if (
+          question.includes("disadvantages of underground") ||
+          question.includes("underground mining risks")
+        ) {
+          answer =
+            "Underground mining is expensive, technically complex, and poses safety risks like tunnel collapses and radiation exposure.";
+        } else if (
+          question.includes("cost of mining") ||
+          question.includes("how much does uranium mining cost")
+        ) {
+          answer =
+            "Costs vary: In-situ leaching has lower setup costs (~$10M), open-pit mining is higher (~$50M) due to earth removal, and underground mining is moderate (~$30M) but has high operational costs.";
+        } else if (
+          question.includes("safety measures") ||
+          question.includes("how to make mining safe")
+        ) {
+          answer =
+            "Safety measures include radiation monitoring, protective gear, proper ventilation, waste containment, and regular environmental assessments.";
+        } else if (
+          question.includes("yellowcake") ||
+          question.includes("what is yellowcake")
+        ) {
+          answer =
+            "Yellowcake is a concentrated form of uranium oxide produced from mined ore, used as a precursor for nuclear fuel.";
+        } else if (
+          question.includes("nuclear reactors") ||
+          question.includes("how does uranium power reactors")
+        ) {
+          answer =
+            "Uranium is enriched and formed into fuel rods, which undergo fission in nuclear reactors to generate heat for electricity production.";
+        } else {
+          answer =
+            "Sorry, I don't have an answer for that yet. Try asking something about uranium, mining methods, or environmental impacts.";
+        }
+
+        // Append AI answer to chat history
+        const aiMessage = document.createElement("p");
+        aiMessage.innerHTML = `<strong style="color: #e55634;">AI:</strong> ${answer}`;
+        chatHistory.appendChild(aiMessage);
+        document.getElementById("chat-input").value = ""; // Clear input
+        chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to bottom
+      }
+    </script>
+  </body>
+</html>
